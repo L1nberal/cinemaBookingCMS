@@ -5,5 +5,8 @@ export const urls = {
   login: '/auth/login',
   signup: '/auth/signup',
   screens: '/app/screens',
+  customers: '/app/customers',
+  movies: '/app/movies',
+  calendar: '/app/calendar',
   statistics: '/app/statistics',
 };

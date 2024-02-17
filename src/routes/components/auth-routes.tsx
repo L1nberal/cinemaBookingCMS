@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { RootState } from '../../../state';
-import { urls } from '../../urls';
-import { Login, Signup } from '../../../features';
+import { RootState } from '../../state';
+import { urls } from '../urls';
+import { Login, Signup } from '../../features';
 
 export const AuthRoutes = () => {
   const user = useSelector((state: RootState) => state.user.user);
