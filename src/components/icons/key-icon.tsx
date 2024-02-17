@@ -8,7 +8,7 @@ export const KeyIcon = ({ className }: TKeyIcon) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      className={clsx('icon icon-tabler icon-tabler-key', className)}
+      className={clsx('icon icon-tabler icon-tabler-key w-5 h-5', className)}
       width='24'
       height='24'
       viewBox='0 0 24 24'

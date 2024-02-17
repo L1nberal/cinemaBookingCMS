@@ -1,12 +1,6 @@
 import { AreaChart } from '@mantine/charts';
 
 import { data } from './mockData';
-import Pagination from './pagination';
-import { useEffect, useState } from 'react';
-
-const itemsPerPage = 10; // Adjust as needed
-const totalItems = 100; // Replace with your actual data count
-const totalPages = Math.ceil(totalItems / itemsPerPage);
 
 const chartStyles = {
   tooltip: {
@@ -28,22 +22,6 @@ const chartStyles = {
 };
 
 export const Statistics = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [data2, setData2] = useState<{ id: number }[]>([]);
-
-  useEffect(() => {
-    const fetchData = async (page: number) => {
-      const startIndex = (page - 1) * itemsPerPage;
-      // Simulate fetching data from an API or local source
-      const pageData = Array.from({ length: itemsPerPage }).map((_, i) => ({
-        id: startIndex + i + 1,
-        // ... other item data
-      }));
-      setData2(pageData);
-    };
-
-    fetchData(currentPage);
-  }, [currentPage]);
   return (
     <>
       <AreaChart
@@ -58,16 +36,6 @@ export const Statistics = () => {
         ]}
         curveType='linear'
         styles={chartStyles}
-      />
-
-      {data2.map((item) => (
-        <div key={item.id}>{item.id}</div>
-      ))}
-
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={(page) => setCurrentPage(page)}
       />
     </>
   );

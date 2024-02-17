@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import { UserIcon, KeyIcon } from '../../components';
 import { COLOR_NAME } from '../../config';
 import { login, TUser } from '../../state';
+import { useLogin } from './api';
 import './styles/login.scss';
 
 type TFormValues = {
@@ -15,6 +16,7 @@ type TFormValues = {
 
 export const Login = () => {
   const dispatch = useDispatch();
+  const loginFc = useLogin();
 
   const form = useForm({
     initialValues: {
@@ -37,6 +39,7 @@ export const Login = () => {
     };
 
     dispatch(login(userData));
+    loginFc(userData);
   };
 
   return (
@@ -53,17 +56,15 @@ export const Login = () => {
         onSubmit={form.onSubmit((values) => handleLogin(values))}
       >
         <Text
+          className='text-center font-black'
           size='xl'
-          fw={900}
           variant='gradient'
           gradient={{ from: 'red', to: 'grape', deg: 90 }}
-          className='text-center'
         >
           Login
         </Text>
 
         <TextInput
-          className=''
           label='Email'
           placeholder='Your identifier'
           leftSection={<UserIcon />}
@@ -79,7 +80,7 @@ export const Login = () => {
           {...form.getInputProps('password')}
         />
 
-        <Button color='green' size='sm' type='submit' mt={15}>
+        <Button className='mt-4' color='green' size='sm' type='submit'>
           Submit
         </Button>
       </form>

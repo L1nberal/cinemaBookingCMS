@@ -2,9 +2,11 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import { TInitialState, TUser } from './types';
 
+const userData = localStorage.getItem('user');
+
 const initialState: TInitialState = {
   isloggedIn: false,
-  user: null,
+  user: userData ? JSON.parse(userData) : null,
 };
 
 export const userSlice = createSlice({
