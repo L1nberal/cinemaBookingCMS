@@ -3,10 +3,12 @@ import { Tabs } from '@mantine/core';
 import { useNavigate } from 'react-router-dom';
 
 import {
+  CalendarIcon,
   CustomersIcon,
   GlassesIcon,
   MovieIcon,
   ScreenIcon,
+  SettingIcon,
 } from '../../components';
 
 export const Sidebar = () => {
@@ -54,10 +56,26 @@ export const Sidebar = () => {
 
         <Tabs.Tab
           className='!rounded-none'
+          value='calendar'
+          leftSection={<CalendarIcon />}
+        >
+          Calendar
+        </Tabs.Tab>
+
+        <Tabs.Tab
+          className='!rounded-none'
           value='statistics'
           leftSection={<ScreenIcon />}
         >
           Statistics
+        </Tabs.Tab>
+
+        <Tabs.Tab
+          className='!rounded-none'
+          value='settings'
+          leftSection={<SettingIcon />}
+        >
+          Settings
         </Tabs.Tab>
       </Tabs.List>
     </Tabs>

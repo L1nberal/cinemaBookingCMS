@@ -4,6 +4,7 @@ import { Screens, Statistics } from '../features';
 import { AppLayout } from '../layouts';
 import { urls } from './urls';
 import { UnderContruction } from './components';
+import { Calendar } from '@mantine/dates';
 
 export const protectedRoutes = [
   {
@@ -28,8 +29,16 @@ export const protectedRoutes = [
         element: <UnderContruction />,
       },
       {
+        path: 'calendar',
+        element: <Calendar />,
+      },
+      {
         path: 'statistics',
         element: <Statistics />,
+      },
+      {
+        path: 'settings',
+        element: <UnderContruction />,
       },
     ],
   },

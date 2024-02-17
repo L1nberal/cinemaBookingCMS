@@ -9,4 +9,5 @@ export const urls = {
   movies: '/app/movies',
   calendar: '/app/calendar',
   statistics: '/app/statistics',
+  settings: '/app/settings',
 };

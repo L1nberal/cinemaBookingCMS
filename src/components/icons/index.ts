@@ -5,3 +5,6 @@ export * from './glasses-icon';
 export * from './customers-icon';
 export * from './movie-icon';
 export * from './screen-icon';
+export * from './calendar-icon';
+export * from './setting-icon';
+export * from './logout-icon';
