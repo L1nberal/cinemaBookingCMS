@@ -1,9 +1,8 @@
-import { Badge, Button, Card, Group, Image, Text } from "@mantine/core";
+import { Badge, Button, Card, Group, Image, Text } from '@mantine/core';
 
 export const Screens = () => {
   return (
     <div>
-      {' '}
       <Card shadow='sm' padding='lg' radius='md' withBorder>
         <Card.Section>
           <Image

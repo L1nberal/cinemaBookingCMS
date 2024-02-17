@@ -1,0 +1,10 @@
+.login-wrapper {
+  background-image: url('../../../assets/cinema-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 17%;
+
+  .login__form {
+    background-color: rgba($color: white, $alpha: 0.8);
+  }
+}

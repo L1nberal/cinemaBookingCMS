@@ -1,28 +1,24 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 import { Screens, Statistics } from '../features';
-import { DefaultLayout } from '../layouts';
+import { AppLayout } from '../layouts';
+import { urls } from './urls';
 
 export const protectedRoutes = [
   {
-    path: '/',
-    element: (
-      <DefaultLayout>
-        <Outlet />
-      </DefaultLayout>
-    ),
-
+    path: urls.app,
+    element: <AppLayout />,
     children: [
       {
         index: true,
-        element: <Navigate to='/screens' />,
+        element: <Navigate to={urls.screens} />,
       },
       {
-        path: '/screens',
+        path: 'screens',
         element: <Screens />,
       },
       {
-        path: '/statistics',
+        path: 'statistics',
         element: <Statistics />,
       },
     ],

@@ -1,24 +1,13 @@
-import { Navigate, Outlet } from 'react-router-dom';
-
-import { Login, Signup } from '../features';
+import { AuthRoutes, Home } from './components';
+import { urls } from './urls';
 
 export const publicRoutes = [
   {
-    path: '/',
-    element: <Outlet />,
-    children: [
-      {
-        index: true,
-        element: <Navigate to='/login' />,
-      },
-      {
-        path: '/login',
-        element: <Login />,
-      },
-      {
-        path: '/signup',
-        element: <Signup />,
-      },
-    ],
+    path: urls.home,
+    element: <Home />,
+  },
+  {
+    path: urls.auth,
+    element: <AuthRoutes />,
   },
 ];
